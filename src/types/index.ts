@@ -1,24 +1,21 @@
-import type { Component as VueComponent } from 'vue'
-
-export interface PageBuilder {
-  title?: string
+export interface Page {
+  metadata: Metadata
   sections: Section[]
-  currentSection: Section | null
-  currentBlock: Block | null
-  currentComponent: object | null
-  tabs: string
+}
 
-  addSection: CallableFunction
-  removeSection: CallableFunction
-  addComponent: CallableFunction
-  removeComponent: CallableFunction
-  generateBlocks: CallableFunction
+
+export interface Metadata {
+  title: string
+  slug: string
+  description: string
+  lang: string
 }
 
 export interface Section {
   id: string
   layout: Layout
   blocks?: Block[]
+  styles: {}
 }
 
 export interface Layout {
@@ -28,7 +25,14 @@ export interface Layout {
 
 export interface Block {
   id: string
-  components: []
+  components: Component[]
+  styles: {}
+}
+
+export interface Component {
+  id: string
+  name: string
+  props: {}
 }
 
 export type DeepPartial<T> = {
