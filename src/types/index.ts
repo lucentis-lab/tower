@@ -1,8 +1,4 @@
-export interface Page {
-  metadata: Metadata
-  sections: Section[]
-}
-
+export type TabPanel = 'page' | 'section' | 'block' | 'component'
 
 export interface Metadata {
   title: string
@@ -15,7 +11,7 @@ export interface Section {
   id: string
   layout: Layout
   blocks?: Block[]
-  styles: {}
+  styles: object
 }
 
 export interface Layout {
@@ -26,13 +22,13 @@ export interface Layout {
 export interface Block {
   id: string
   components: Component[]
-  styles: {}
+  styles: object
 }
 
 export interface Component {
   id: string
   name: string
-  props: {}
+  props: object
 }
 
 export type DeepPartial<T> = {
