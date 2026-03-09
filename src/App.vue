@@ -1,7 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import PageBuilder from './components/PageBuilder.vue';
+
+</script>
 
 <template>
-  <div class="">ok</div>
+  <pageBuilder></PageBuilder>
 </template>
 
 <style scoped></style>
