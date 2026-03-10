@@ -6,7 +6,7 @@ import CustomPanel from './panels/custom/CustomPanel.vue';
 </script>
 
 <template>
-  <div class="h-screen w-screen bg-slate-200 overflow-hidden flex">
+  <div class="h-screen w-screen overflow-hidden flex">
     <AddPanel></AddPanel>
     <PageRender></PageRender>
     <CustomPanel></CustomPanel>

@@ -11,7 +11,7 @@ export interface Section {
   id: string
   layout: Layout
   blocks?: Block[]
-  styles: object
+  props: object
 }
 
 export interface Layout {
@@ -22,7 +22,7 @@ export interface Layout {
 export interface Block {
   id: string
   components: Component[]
-  styles: object
+  props: object
 }
 
 export interface Component {

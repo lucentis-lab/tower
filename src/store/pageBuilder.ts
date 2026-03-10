@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { Metadata, type Block, type Component, type Section, type TabPanel } from '@/types'
+import { type Metadata, type Block, type Component, type Section, type TabPanel } from '@/types'
 import { ref } from 'vue'
 
 const DEFAULT_METADATA = {
@@ -41,7 +41,7 @@ export const usePageBuilderStore = defineStore('pageBuilder', () => {
 
   return {
     //state
-    metadata, activeTab, selectedBlock, selectedSection, selectedComponent,
+    metadata, sections, activeTab, selectedBlock, selectedSection, selectedComponent,
     // actions
     addSection, removeSection
   }

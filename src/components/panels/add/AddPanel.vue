@@ -1,3 +1,12 @@
+<script setup lang="ts">
+import AddComponentTab from './addComponentTab.vue';
+import AddSectionTab from './AddSectionTab.vue';
+
+</script>
+
 <template>
-  <div class="bg-green-200 w-72"></div>
+  <div class="w-72">
+    <AddSectionTab></AddSectionTab>
+    <AddComponentTab></AddComponentTab>
+  </div>
 </template>
