@@ -1,18 +1,14 @@
 // composables/useSection.ts
 import { usePageBuilderStore } from '@/store/pageBuilder'
-import type { Layout, Block, Section } from '@/types'
+import type { Layout, Section } from '@/types'
 import { v4 as uuid } from 'uuid'
+
+import { useBlock } from '@/composables/useBlock'
+
 
 export function useSection() {
   const store = usePageBuilderStore()
-
-  function createBlock(): Block {
-    return {
-      id: uuid(),
-      components: [],
-      props: {},
-    }
-  }
+  const { createBlock } = useBlock()
 
   function createSection(payload: Layout): void {
     const section: Section = {
@@ -26,5 +22,9 @@ export function useSection() {
     store.selectedSection = section
   }
 
-  return { createSection }
+  function selectSection(section: Section): void {
+    store.selectedSection = section
+  }
+
+  return { createSection, selectSection }
 }

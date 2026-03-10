@@ -1,7 +1,11 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { Trash2 } from 'lucide-vue-next'
+import BlockPreview from '@/components/BlockPreview.vue'
 import { usePageBuilderStore } from '@/store/pageBuilder'
+import { useSection } from '@/composables/useSection'
+
+const { selectSection } = useSection()
 import type { Section } from '@/types'
 
 const props = defineProps<{ section: Section }>()
@@ -15,6 +19,7 @@ const isSelected = computed(() => store.selectedSection?.id === props.section.id
   <div
     class="group relative border-2 rounded transition-colors"
     :class="isSelected ? 'border-blue-500' : 'border-slate-200 hover:border-slate-400'"
+    @click="selectSection(section)"
   >
     <div class="absolute top-2 right-2 flex items-center gap-1 z-10 opacity-0 group-hover:opacity-100 transition-opacity">
       <span class="text-xs bg-slate-100 text-slate-500 font-mono px-2 py-0.5 rounded">
@@ -32,10 +37,10 @@ const isSelected = computed(() => store.selectedSection?.id === props.section.id
       class="grid"
       :style="{ gridTemplateColumns: `repeat(${section.layout.cols}, 1fr)` }"
     >
-      <div
+      <BlockPreview
         v-for="block in section.blocks"
         :key="block.id"
-        class="border border-dashed border-slate-200 min-h-20"
+        :block="block"
       />
     </div>
   </div>
