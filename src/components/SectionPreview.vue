@@ -4,7 +4,7 @@ import { Trash2 } from 'lucide-vue-next'
 import BlockPreview from '@/components/BlockPreview.vue'
 import { usePageBuilderStore } from '@/store/pageBuilder'
 import { useSection } from '@/composables/useSection'
-import { getSectionStyle } from '@/utils/styles'
+import { getSectionStyles } from '@/utils/styles'
 
 const { selectSection } = useSection()
 import type { Section } from '@/types'
@@ -36,7 +36,7 @@ const isSelected = computed(() => store.selectedSection?.id === props.section.id
 
     <div
       class="grid"
-      :style="[getSectionStyle(section), { gridTemplateColumns: `repeat(${section.layout.cols}, 1fr)` }]"
+      :style="[getSectionStyles(section), { gridTemplateColumns: `repeat(${section.layout.cols}, 1fr)` }]"
     >
       <BlockPreview
         v-for="block in section.blocks"

@@ -2,8 +2,9 @@
 import { computed } from 'vue'
 import { usePageBuilderStore } from '@/store/pageBuilder'
 import { useBlock } from '@/composables/useBlock'
+import { getBlockStyles } from '@/utils/styles'
+import ComponentPreview from '@/components/ComponentPreview.vue'
 import type { Block } from '@/types'
-import ComponentPreview from './ComponentPreview.vue'
 
 const props = defineProps<{ block: Block }>()
 const store = usePageBuilderStore()
@@ -14,13 +15,14 @@ const isSelected = computed(() => store.selectedBlock?.id === props.block.id)
 
 <template>
   <div
-    class="border border-dashed transition-colors cursor-pointer"
+    class="border border-dashed transition-colors cursor-pointer flex flex-col"
     :class="[
       isSelected
         ? 'border-green-500 bg-green-50/20'
-        : 'border-slate-200 hover:border-slate-400 hover:bg-slate-50',
+        : 'border-slate-200 hover:border-slate-400',
       { 'min-h-20': !block.components.length }
     ]"
+    :style="getBlockStyles(block)"
     @click="selectBlock(block)"
   >
     <ComponentPreview

@@ -20,7 +20,6 @@ export function useSection() {
         backgroundColor: '#ffffff',
         paddingX: 0,
         paddingY: 0,
-        maxWidth: 1200,
         gap: 0,
       },
     }

@@ -17,10 +17,10 @@ export interface Section {
 
 export interface Styles {
   backgroundColor?: string
-  paddingX: number,
-  paddingY: number,
-  gap: number
-  maxWidth: number
+  paddingX?: number
+  paddingY?: number
+  gap?: number
+  align?: 'start' | 'center' | 'end'
 }
 
 export interface Layout {
@@ -32,6 +32,7 @@ export interface Block {
   id: string
   components: Component[]
   props?: object
+  styles: Styles
 }
 
 export interface Component {

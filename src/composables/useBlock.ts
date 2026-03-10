@@ -10,6 +10,13 @@ export function useBlock() {
       id: uuid(),
       components: [],
       props: {},
+      styles: {
+      backgroundColor: undefined,
+      paddingX: 0,
+      paddingY: 0,
+      gap: 0,
+      align: 'start',
+    },
     }
   }
 
