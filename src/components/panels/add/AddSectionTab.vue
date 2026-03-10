@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { sections } from '@/utils/section'
+import { sections } from '@/utils/sections'
 import { useSection } from '@/composables/useSection'
 
 const { createSection } = useSection()

@@ -1,12 +1,25 @@
 <script setup lang="ts">
-import AddComponentTab from './addComponentTab.vue';
-import AddSectionTab from './AddSectionTab.vue';
+import { usePageBuilderStore } from '@/store/pageBuilder'
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
+import AddComponentTab from './addComponentTab.vue'
+import AddSectionTab from './AddSectionTab.vue'
 
+const store = usePageBuilderStore()
 </script>
 
 <template>
-  <div class="w-72">
-    <AddSectionTab></AddSectionTab>
-    <AddComponentTab></AddComponentTab>
+  <div class="w-72 h-screen border-r flex flex-col">
+    <Tabs :model-value="store.activeAddTab" @update:value="store.activeAddTab = $event">
+      <TabsList class="w-full rounded-none border-b">
+        <TabsTrigger value="section" class="flex-1">Sections</TabsTrigger>
+        <TabsTrigger value="component" class="flex-1">Composants</TabsTrigger>
+      </TabsList>
+      <TabsContent value="section">
+        <AddSectionTab />
+      </TabsContent>
+      <TabsContent value="component">
+        <AddComponentTab />
+      </TabsContent>
+    </Tabs>
   </div>
 </template>

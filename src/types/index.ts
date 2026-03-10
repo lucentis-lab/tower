@@ -11,7 +11,7 @@ export interface Section {
   id: string
   layout: Layout
   blocks?: Block[]
-  props: object
+  props?: object
 }
 
 export interface Layout {
@@ -22,13 +22,13 @@ export interface Layout {
 export interface Block {
   id: string
   components: Component[]
-  props: object
+  props?: object
 }
 
 export interface Component {
   id: string
   name: string
-  props: object
+  props?: object
 }
 
 export type DeepPartial<T> = {

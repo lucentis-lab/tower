@@ -16,7 +16,7 @@ export const usePageBuilderStore = defineStore('pageBuilder', () => {
 
   const metadata = ref<Metadata>(DEFAULT_METADATA)
   const sections = ref<Section[]>([])
-  const activeAddTab = ref<TabPanel>('page')
+  const activeAddTab = ref<TabPanel>('section')
   const selectedSection = ref<Section | null>(null)
   const selectedBlock = ref<Block | null>(null)
   const selectedComponent = ref<Component | null>(null)

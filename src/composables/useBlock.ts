@@ -15,6 +15,7 @@ export function useBlock() {
 
   function selectBlock(block: Block): void {
     store.selectedBlock = block
+    store.activeAddTab = 'component'
   }
 
   return {
