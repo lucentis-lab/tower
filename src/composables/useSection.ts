@@ -16,6 +16,13 @@ export function useSection() {
       layout: payload,
       blocks: Array.from({ length: payload.cols }, createBlock),
       props: {},
+      styles: {
+        backgroundColor: '#ffffff',
+        paddingX: 0,
+        paddingY: 0,
+        maxWidth: 1200,
+        gap: 0,
+      },
     }
 
     store.addSection(section)

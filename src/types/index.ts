@@ -12,6 +12,15 @@ export interface Section {
   layout: Layout
   blocks?: Block[]
   props?: object
+  styles: Styles
+}
+
+export interface Styles {
+  backgroundColor?: string
+  paddingX: number,
+  paddingY: number,
+  gap: number
+  maxWidth: number
 }
 
 export interface Layout {
