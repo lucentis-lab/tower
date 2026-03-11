@@ -26,6 +26,7 @@ export function useSection() {
 
     store.addSection(section)
     store.selectedSection = section
+    store.activeCustomTab = 'section'
   }
 
   function selectSection(section: Section): void {
